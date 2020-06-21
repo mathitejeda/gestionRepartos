@@ -9,4 +9,6 @@ protected:
 public:
 	void cargar ();
 	void mostrar ();
+	bool getActivo() { return activo; }
+	bool setActivo(bool act) {activo = act;}
 };
