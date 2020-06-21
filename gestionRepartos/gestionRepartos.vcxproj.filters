@@ -24,12 +24,24 @@
     <ClCompile Include="venta.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fecha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="persona.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="producto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="venta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fecha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="persona.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
