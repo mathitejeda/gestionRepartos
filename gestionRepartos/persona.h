@@ -9,6 +9,4 @@ protected:
 public:
 	void cargar ();
 	void mostrar ();
-
-	
 };

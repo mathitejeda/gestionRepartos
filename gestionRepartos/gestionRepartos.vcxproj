@@ -139,14 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cliente.cpp" />
+    <ClCompile Include="empleado.cpp" />
     <ClCompile Include="fecha.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="persona.cpp" />
     <ClCompile Include="producto.cpp" />
     <ClCompile Include="venta.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cliente.h" />
+    <ClInclude Include="empleado.h" />
     <ClInclude Include="fecha.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="persona.h" />
     <ClInclude Include="producto.h" />
     <ClInclude Include="venta.h" />
