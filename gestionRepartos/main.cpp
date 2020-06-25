@@ -1,6 +1,7 @@
 // include librerias principales
 #include <iostream>
-#include <locale>
+#include <wchar.h>
+#include <locale.h>
 #include "rlutil.h"
 using namespace std;
 using namespace rlutil;
@@ -9,8 +10,8 @@ using namespace rlutil;
 #include "menu.h"
 
 int main() {
-	setlocale(LC_ALL, "es_ES.UTF-8");
-	menu();
+	setlocale(LC_ALL, "spanish");
+	menuPrincipal();
 
 	return 0; 
 }

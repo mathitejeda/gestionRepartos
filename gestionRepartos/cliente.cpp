@@ -1,7 +1,8 @@
 #include "cliente.h"
 #include <iostream>
 using namespace std;
-void cliente::cargar()
+const char* PATH_CLIENTE = "datos/cliente.dat";
+void cliente::cargarCliente()
 {
 	persona::cargar();
 	cout << "Numero de reparto: " << endl;
@@ -10,9 +11,20 @@ void cliente::cargar()
 	cin >> diaReparto;
 }
 
-void cliente::mostrar()
+void cliente::mostrarCliente()
 {
 	persona::mostrar();
 	cout << "Reparto nro: " << numeroReparto << endl;;
 	cout << "Dias: " << diaReparto << endl;
+}
+
+bool cliente::guardar()
+{
+	bool exito;
+	FILE* p;
+	p = fopen(PATH_CLIENTE, "ab");
+	if (p == NULL) { return false; }
+	exito = fwrite(this, sizeof(cliente), 1, p);
+	fclose(p);
+	return exito;
 }

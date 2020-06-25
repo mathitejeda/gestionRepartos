@@ -1,6 +1,6 @@
 #pragma once
 #include "persona.h"
-class cliente:public persona
+class cliente :public persona
 {
 private:
 	int ID;
@@ -8,20 +8,20 @@ private:
 	int diaReparto;
 	float saldo;
 public:
-	void cargar();
-	void mostrar();
+	void cargarCliente();
+	void mostrarCliente();
+	bool guardar();
 	//setters
 	void setID(int id);
-	void setNroReparto();
-	void setDiaReparto();
-	void setSaldo();
+	void setNroReparto(int num);
+	void setDiaReparto(int dia);
+	void setSaldo(float saldo);
 
 	//getters
 
-	int getID();
-	int getNroReparto();
-	int getDiaReparto();
-	float getSaldo();
-
+	int getID() { return ID; };
+	int getNroReparto() { return numeroReparto; };
+	int getDiaReparto() { return diaReparto; };
+	float getSaldo() { return saldo; };
 };
 
