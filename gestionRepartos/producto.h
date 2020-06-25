@@ -3,9 +3,10 @@
 class producto {
 private:
 	int ID;
-	char nombre[50];
+	char nombreProducto[50];
 	float precio;
-
 public:
-	
+	void nuevoProducto();
+	void mostrarProductos();
+	void modificarproducto();
 };

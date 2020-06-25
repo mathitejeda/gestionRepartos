@@ -8,5 +8,6 @@ private:
 public:
 	void altaEmpleado();
 	void mostrarEmpleado();
+	void bajaEmpleado();
 };
 
