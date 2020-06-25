@@ -10,5 +10,18 @@ private:
 public:
 	void cargar();
 	void mostrar();
+	//setters
+	void setID(int id);
+	void setNroReparto();
+	void setDiaReparto();
+	void setSaldo();
+
+	//getters
+
+	int getID();
+	int getNroReparto();
+	int getDiaReparto();
+	float getSaldo();
+
 };
 
