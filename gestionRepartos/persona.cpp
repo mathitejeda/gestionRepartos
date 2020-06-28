@@ -21,6 +21,6 @@ void persona::mostrar()
     cout << "Apellidos: " << apellidos << endl;
     cout << "DNI: " << DNI << endl;
     cout << "Domicilio: " << domicilio << endl;
-    cout << "Teléfono: " << telefono << endl;
+    cout << "TelÃ©fono: " << telefono << endl;
 }
 

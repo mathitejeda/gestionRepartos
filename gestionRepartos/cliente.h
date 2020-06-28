@@ -8,9 +8,11 @@ private:
 	int diaReparto;
 	float saldo;
 public:
-	void cargarCliente();
 	void mostrarCliente();
+	bool cargarCliente();
+	bool leerCliente(int pos);
 	bool guardar();
+	bool guardarModificacion(int pos);
 	//setters
 	void setID(int id);
 	void setNroReparto(int num);
@@ -25,3 +27,4 @@ public:
 	float getSaldo() { return saldo; };
 };
 
+void altaCliente ();
