@@ -6,12 +6,10 @@
 using namespace std;
 using namespace rlutil;
 // include librerias de clase
-#include "persona.h"
 #include "menu.h"
 
 int main() {
 	setlocale(LC_ALL, "spanish");
 	menuPrincipal();
-
 	return 0; 
 }
