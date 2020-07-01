@@ -4,13 +4,13 @@
 using namespace std;
 using namespace rlutil;
 
-void error (char*mensaje){
+void error (const char*mensaje){
     setColor(RED);
-    cout << ">"<<mensaje;
+    cout <<endl<< ">"<<mensaje;
     setColor(WHITE);
 }
-void exito (char*mensaje){
+void exito (const char*mensaje){
     setColor(GREEN);
-    cout << ">"<<mensaje;
+    cout <<endl<< ">"<<mensaje;
     setColor(WHITE);
 }

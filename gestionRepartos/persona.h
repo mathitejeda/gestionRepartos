@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cstring>
 class persona
 {
 protected:
@@ -9,6 +10,11 @@ protected:
 public:
 	void cargar ();
 	void mostrar ();
-	bool getActivo() { return activo; }
-	bool setActivo(bool act) {activo = act;}
+	bool getEstado() { return activo; }
+	void setEstado(bool act) {
+		activo = act;
+		}
+	void setDomicilio (char sDomicilio[12]) {strcpy(domicilio,sDomicilio);}
+	void setTelefono (int sTelefono){ telefono = sTelefono;}
+	
 };

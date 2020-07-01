@@ -1,4 +1,4 @@
 #pragma once 
 
-void error (char*mensaje);
-void exito (char*mensaje);
+void error (const char*mensaje);
+void exito (const char*mensaje);

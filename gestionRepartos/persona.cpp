@@ -1,15 +1,15 @@
 #include "persona.h"
 using namespace std;
 void persona::cargar(){
-    cout << "Nombres: "<<endl;
+    cout << "Nombres: ";
     cin.getline(nombres,50);
-    cout << "Apellidos: "<<endl;
+    cout << "Apellidos: ";
     cin.getline(apellidos,50);
-    cout << "DNI: "<<endl;
+    cout << "DNI: ";
     cin.getline(DNI,12);
-    cout << "Domicilio: "<<endl;
+    cout << "Domicilio: ";
     cin.getline(domicilio,50);
-    cout << "Telefono: "<<endl;
+    cout << "Telefono: ";
     cin >> telefono;
     
     activo = true;

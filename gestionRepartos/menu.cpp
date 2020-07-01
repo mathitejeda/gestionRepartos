@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "funciones.h"
 #include <iostream>
 #include "rlutil.h"
 #include "cliente.h"
@@ -47,9 +48,10 @@ void menuPrincipal()
 
 
 void submenuClientes() {
-	int opcion;
+	int opcion,id;
 	while (true)
 	{
+		cls();
 		cout << "CLIENTES" << endl;
 		cout << "..........................." << endl;
 		cout << "1)ALTA DE CLIENTE" << endl;
@@ -64,7 +66,44 @@ void submenuClientes() {
 		switch (opcion)
 		{
 		case 1:
-			
+			cls();
+			if (altaCliente()){
+				exito ("Cliente guardado correctamente");
+			}
+			else {
+				error ("No se pudo guardar el cliente");
+			}
+			anykey();
+			break;
+
+		case 2:
+			cls();
+			cout << "Ingrese el id del cliente a modificar: ";
+			cin >> id;
+			if (modificacionCliente(id)){
+				exito ("Cliente modificado con exito!");
+			}
+			else error("No se pudo modificar el cliente");
+			anykey();
+			break;
+
+		case 3:
+			cls();
+			cout << "Ingrese el id del cliente a eliminar: ";
+			cin >> id;
+			if (bajaCliente(id)){
+				exito("Cliente eliminado");
+			}
+			else error("No se eliminó el cliente.");
+			anykey();
+			break;
+
+		case 4:
+			cls();
+			cout << "Ingrese el id del cliente que desea visualizar: ";
+			cin >> id;
+			listarCliente(id);
+			anykey();
 			break;
 		case 0:
 			cls();
@@ -87,6 +126,7 @@ void submenuRepartos()
 	int opcion;
 	while (true)
 	{
+		cls();
 		cout << "REPARTOS" << endl;
 		cout << "..............................." << endl;
 		cout << "1)VIZUALIZAR TODOS LOS REPARTOS" << endl;
@@ -113,6 +153,7 @@ void submenuProductos()
 	int opcion;
 	while (true)
 	{
+		cls();
 		cout << "PRODUCTOS" << endl;
 		cout << "..........................." << endl;
 		cout << "1)VISUALIZAR PRODUCTOS" << endl;
@@ -138,6 +179,7 @@ void informes() {
 	int opcion;
 	while (true)
 	{
+		cls();
 		cout << "INFORMES" << endl;
 		cout << "..........................." << endl;
 		cout << "1)RECAUDACION ANUAL" << endl;

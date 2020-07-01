@@ -12,4 +12,4 @@ int main() {
 	setlocale(LC_ALL, "spanish");
 	menuPrincipal();
 	return 0; 
-}
+} 
