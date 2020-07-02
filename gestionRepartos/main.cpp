@@ -10,7 +10,8 @@ using namespace rlutil;
 #include "menu.h"
 
 int main() {
-	setlocale(LC_ALL, "Spanish");
+
+	SetConsoleOutputCP(CP_UTF8);
 	menuPrincipal();
 	return 0; 
 } 
