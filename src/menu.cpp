@@ -113,7 +113,7 @@ void submenuClientes() {
 			break;
 		default:
 			cls();
-			cout << "Opcion invalida"; //agregar una funcion de opcion invalida
+			error ("Opcion invalida");
 			anykey();
 			break;
 		}
@@ -140,6 +140,9 @@ void submenuRepartos()
 		switch (opcion)
 		{
 		default:
+			cls();
+			error ("Opcion invalida");
+			anykey();
 			break;
 		}
 

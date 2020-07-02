@@ -3,7 +3,7 @@
 #include "rlutil.h"
 #include <iostream>
 using namespace std;
-const char* PATH_CLIENTE = "datos/cliente.dat";
+const char* PATH_CLIENTE = "../datos/cliente.dat";
 bool cliente::cargarCliente()
 {
 	bool exito;

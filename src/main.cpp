@@ -10,7 +10,6 @@ using namespace rlutil;
 #include "menu.h"
 
 int main() {
-
 	SetConsoleOutputCP(CP_UTF8);
 	menuPrincipal();
 	return 0; 
