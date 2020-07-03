@@ -30,7 +30,7 @@ public:
 };
 
 bool altaCliente ();
-bool buscarCliente ();
+int buscarCliente (int id);
 bool modificacionCliente(int id);
 bool bajaCliente (int id);
 void listarCliente (int id);

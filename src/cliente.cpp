@@ -2,8 +2,10 @@
 #include "funciones.h"
 #include "rlutil.h"
 #include <iostream>
+#include "reparto.h"
 using namespace std;
 const char* PATH_CLIENTE = "../datos/cliente.dat";
+
 bool cliente::cargarCliente()
 {
 	bool exito;
@@ -101,7 +103,7 @@ bool altaCliente(){
 
 }
 
-bool modificacionCliente (int id){
+bool modificacionCliente (int id){ 
 	int repartidor , dia, telefono,opc;
 	char domicilio [50];
 	int pos;

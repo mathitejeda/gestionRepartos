@@ -1,8 +1,10 @@
 #include "producto.h"
 #include <iostream>
 
+const char* PATH_PRODUCTO = "../datos/producto.dat";
+
 using namespace std;
-void producto::nuevoProducto()
+bool producto::nuevoProducto()
 {
 	cout << "Ingrese el nombre del producto: ";
 	cin.getline(nombreProducto, 50);
@@ -17,8 +19,14 @@ void producto::mostrarProductos()
 	cout << "Precio: " << precio;
 }
 
-void producto::modificarproducto()
-{
-	cout << "Ingrese el nuevo precio: ";
-	cin >> precio;
-}
+// bool producto::modificarproducto()
+// {
+// 	cout << "Ingrese el nuevo precio: ";
+// 	cin >> precio;
+// }
+
+bool altaProducto ();
+bool buscarProducto();
+bool modificarProducto (int id);
+bool eliminarProducto (int id);
+bool listarProducto (int id);

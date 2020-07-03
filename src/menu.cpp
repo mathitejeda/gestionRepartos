@@ -3,6 +3,7 @@
 #include <iostream>
 #include "rlutil.h"
 #include "cliente.h"
+#include "reparto.h"
 using namespace rlutil;
 using namespace std;
 
@@ -29,6 +30,10 @@ void menuPrincipal()
 		case 1:
 			cls();
 			submenuClientes();
+			break;
+		case 2:
+			cls();
+			submenuRepartos();
 			break;
 		case 0:
 			cls();
@@ -123,7 +128,7 @@ void submenuClientes() {
 
 void submenuRepartos()
 {
-	int opcion;
+	int opcion,id;
 	while (true)
 	{
 		cls();
@@ -139,6 +144,34 @@ void submenuRepartos()
 		cin.ignore();
 		switch (opcion)
 		{
+		case 1:
+			cls();
+			listarRepartos();
+			anykey();
+			break;
+		case 2:
+			cls();
+			if(altaReparto()){
+				exito("Reparto cargado correctamente");
+			}
+			else {
+				error ("No se pudo cargar el reparto");
+			}
+			anykey();
+			break;
+		case 3:
+			cls();
+			cout<< "Ingrese el numero del reparto que quiere modificar";
+			cin>> id;
+			cin.ignore();
+			if (modificarReparto(id)){
+				exito ("Reparto modificado correctamente");
+			}
+			else {
+				error("No se pudo modificar el reparto");
+			}
+			anykey();
+			break;
 		default:
 			cls();
 			error ("Opcion invalida");

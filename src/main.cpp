@@ -11,6 +11,7 @@ using namespace rlutil;
 
 int main() {
 	SetConsoleOutputCP(CP_UTF8);
+	setBackgroundColor(9);
 	menuPrincipal();
 	return 0; 
 } 
