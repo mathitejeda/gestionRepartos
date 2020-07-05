@@ -10,7 +10,8 @@ using namespace std;
 void menuPrincipal()
 {
 	int opcion;
-	while (true) {
+	while (true)
+	{
 		cls();
 		cout << "MENÚ PRINCIPAL" << endl;
 		cout << "...................." << endl;
@@ -48,12 +49,11 @@ void menuPrincipal()
 			break;
 		}
 	}
-
 }
 
-
-void submenuClientes() {
-	int opcion,id;
+void submenuClientes()
+{
+	int opcion, id;
 	while (true)
 	{
 		cls();
@@ -72,11 +72,13 @@ void submenuClientes() {
 		{
 		case 1:
 			cls();
-			if (altaCliente()){
-				exito ("Cliente guardado correctamente");
+			if (altaCliente())
+			{
+				exito("Cliente guardado correctamente");
 			}
-			else {
-				error ("No se pudo guardar el cliente");
+			else
+			{
+				error("No se pudo guardar el cliente");
 			}
 			anykey();
 			break;
@@ -85,10 +87,12 @@ void submenuClientes() {
 			cls();
 			cout << "Ingrese el id del cliente a modificar: ";
 			cin >> id;
-			if (modificacionCliente(id)){
-				exito ("Cliente modificado con exito!");
+			if (modificacionCliente(id))
+			{
+				exito("Cliente modificado con exito!");
 			}
-			else error("No se pudo modificar el cliente");
+			else
+				error("No se pudo modificar el cliente");
 			anykey();
 			break;
 
@@ -96,10 +100,12 @@ void submenuClientes() {
 			cls();
 			cout << "Ingrese el id del cliente a eliminar: ";
 			cin >> id;
-			if (bajaCliente(id)){
+			if (bajaCliente(id))
+			{
 				exito("Cliente eliminado");
 			}
-			else error("No se eliminó el cliente.");
+			else
+				error("No se eliminó el cliente.");
 			anykey();
 			break;
 
@@ -118,17 +124,16 @@ void submenuClientes() {
 			break;
 		default:
 			cls();
-			error ("Opcion invalida");
+			error("Opcion invalida");
 			anykey();
 			break;
 		}
 	}
-
 }
 
 void submenuRepartos()
 {
-	int opcion,id;
+	int opcion, id;
 	while (true)
 	{
 		cls();
@@ -151,36 +156,44 @@ void submenuRepartos()
 			break;
 		case 2:
 			cls();
-			if(altaReparto()){
+			if (altaReparto())
+			{
 				exito("Reparto cargado correctamente");
 			}
-			else {
-				error ("No se pudo cargar el reparto");
+			else
+			{
+				error("No se pudo cargar el reparto");
 			}
 			anykey();
 			break;
 		case 3:
 			cls();
-			cout<< "Ingrese el numero del reparto que quiere modificar";
-			cin>> id;
+			cout << "Ingrese el numero del reparto que quiere modificar";
+			cin >> id;
 			cin.ignore();
-			if (modificarReparto(id)){
-				exito ("Reparto modificado correctamente");
+			if (modificarReparto(id))
+			{
+				exito("Reparto modificado correctamente");
 			}
-			else {
+			else
+			{
 				error("No se pudo modificar el reparto");
 			}
 			anykey();
 			break;
+		case 0:
+			cls();
+			cout << "volviendo al menu principal";
+			msleep(1000);
+			return;
+			break;
 		default:
 			cls();
-			error ("Opcion invalida");
+			error("Opcion invalida");
 			anykey();
 			break;
 		}
-
 	}
-
 }
 
 void submenuProductos()
@@ -206,11 +219,11 @@ void submenuProductos()
 		default:
 			break;
 		}
-
 	}
 }
 
-void informes() {
+void informes()
+{
 
 	int opcion;
 	while (true)
@@ -234,6 +247,5 @@ void informes() {
 		default:
 			break;
 		}
-
 	}
 }

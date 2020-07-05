@@ -9,9 +9,10 @@ using namespace rlutil;
 // include librerias de clase
 #include "menu.h"
 
-int main() {
+int main()
+{
 	SetConsoleOutputCP(CP_UTF8);
 	setBackgroundColor(9);
 	menuPrincipal();
-	return 0; 
-} 
+	return 0;
+}
