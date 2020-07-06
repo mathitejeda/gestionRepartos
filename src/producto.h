@@ -7,10 +7,10 @@ private:
 	float precio;
 public:
 	bool nuevoProducto();
-	void mostrarProductos();
+	void mostrarProducto();
 	bool guardarProducto ();
-	bool guardarModificacion();
-	bool leerProducto();
+	bool guardarModificacion(int pos);
+	bool leerProducto(int pos);
 	// setters
 	
 	void setPrecio (float sPrecio) {precio = sPrecio;}
@@ -22,6 +22,6 @@ public:
 };
 
 bool altaProducto ();
-bool buscarProducto();
+int buscarProducto(int id);
 bool modificarProducto (int id);
-bool listarProducto (int id);
+void listarProductos ();

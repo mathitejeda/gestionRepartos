@@ -4,6 +4,7 @@
 #include "rlutil.h"
 #include "cliente.h"
 #include "reparto.h"
+#include "producto.h"
 using namespace rlutil;
 using namespace std;
 
@@ -35,6 +36,10 @@ void menuPrincipal()
 		case 2:
 			cls();
 			submenuRepartos();
+			break;
+		case 3:
+			cls();
+			submenuProductos();
 			break;
 		case 0:
 			cls();
@@ -199,7 +204,7 @@ void submenuRepartos()
 void submenuProductos()
 {
 
-	int opcion;
+	int opcion, id;
 	while (true)
 	{
 		cls();
@@ -216,6 +221,32 @@ void submenuProductos()
 		cin.ignore();
 		switch (opcion)
 		{
+		case 1:
+			cls();
+			listarProductos();
+			anykey();
+			break;
+		case 2:
+			rlutil::cls();
+			cout << "Ingrese el id del producto a modificar: ";
+			cin >> id;
+			cin.ignore();
+			if(modificarProducto(id)) exito("Producto modificado");
+			else error("No se pudo modificar el producto");
+			anykey();
+			break;
+		case 3:
+			rlutil::cls();
+			if(altaProducto()) exito ("Producto cargado correctamente");
+			else error("No se pudo modificar el producto");
+			rlutil::anykey(); 
+			break;
+		case 0:
+			cls();
+			cout << "volviendo al menu principal";
+			msleep(1000);
+			return;
+			break;
 		default:
 			break;
 		}
