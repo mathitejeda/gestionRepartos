@@ -5,6 +5,7 @@
 #include "cliente.h"
 #include "reparto.h"
 #include "producto.h"
+#include "venta.h"
 using namespace rlutil;
 using namespace std;
 
@@ -40,6 +41,10 @@ void menuPrincipal()
 		case 3:
 			cls();
 			submenuProductos();
+			break;
+		case 100:
+			cls();
+			nuevaVenta(1);
 			break;
 		case 0:
 			cls();

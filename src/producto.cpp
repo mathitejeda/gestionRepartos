@@ -3,12 +3,10 @@
 #include "rlutil.h"
 #include <iostream>
 
-
-
 using namespace std;
 bool producto::nuevoProducto()
 {
-	ID = contarProductos();
+	ID = contarProductos() + 1;
 	cout << "Ingrese el nombre del producto: ";
 	cin.getline(nombreProducto, 50);
 	cout << "Ingrese el precio: ";
@@ -61,15 +59,18 @@ bool producto::guardarModificacion(int pos)
 {
 	bool exito;
 	FILE *p;
-	p = fopen(PATH_PRODUCTO,"rb+");
-	if (p == NULL) return false;
-	if(pos >= 0){
-		fseek(p,pos*sizeof(producto),SEEK_SET);
-		exito = fwrite (this,sizeof(producto),1,p);
+	p = fopen(PATH_PRODUCTO, "rb+");
+	if (p == NULL)
+		return false;
+	if (pos >= 0)
+	{
+		fseek(p, pos * sizeof(producto), SEEK_SET);
+		exito = fwrite(this, sizeof(producto), 1, p);
 	}
-	else exito = false;
+	else
+		exito = false;
 
-	fclose (p);
+	fclose(p);
 	return exito;
 }
 
@@ -120,26 +121,32 @@ bool modificarProducto(int id)
 		cin.ignore();
 		mod.setPrecio(precio);
 
-		if (mod.guardarModificacion(pos)) return true;
-		else return false;
+		if (mod.guardarModificacion(pos))
+			return true;
+		else
+			return false;
 	}
 	return false;
 }
 
-void listarProductos(){
+void listarProductos()
+{
 	producto listar;
 	int i = 0;
-	while (listar.leerProducto(i)){
+	while (listar.leerProducto(i))
+	{
 		listar.mostrarProducto();
-		cout<< "................................."<<endl;
+		cout << "................................." << endl;
 		i++;
 	}
 }
 
-int producto::contarProductos(){
-	int i=0;
+int producto::contarProductos()
+{
+	int i = 0;
 	producto count;
-	while (count.leerProducto(i)){
+	while (count.leerProducto(i))
+	{
 		i++;
 	}
 	return i;

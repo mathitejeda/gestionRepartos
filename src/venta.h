@@ -1,17 +1,17 @@
 #pragma once
-
-class venta
+#include "fecha.h"
+class venta : public fecha
 {
 private:
-	int ID, IDCliente, IDReparto ;
-	fecha fechaVenta;
+	int ID, IDCliente, IDReparto, IDProducto;
 	float pagoCliente;
+
 public:
-	void MostrarVenta();
+	void mostrarVenta();
 	bool cargarVenta(int IDReparto);
 	bool guardarVenta();
 	bool leerVenta(int pos);
-
 };
+
 
 bool nuevaVenta(int IDReparto);

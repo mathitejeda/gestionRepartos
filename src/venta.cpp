@@ -1,29 +1,42 @@
 #include <iostream>
-#include "venta.h"
-#include "funciones.h"´
 #include "fecha.h"
+#include "venta.h"
+#include "funciones.h"
 #include "reparto.h"
 #include "cliente.h"
+#include "producto.h"
+using namespace std;
 
 const char *VENTAS_PATH = "../datos/ventas.dat";
 
 bool venta::cargarVenta(int IDReparto)
 {
+    fecha();
     if (buscarReparto(IDReparto) < 0)
     {
         error("No existe el reparto");
         return false;
     }
-    std::cout << "Ingrese el id del cliente: ";
-    std::cin >> IDCliente;
+    cout << "Ingrese el id del cliente: ";
+    cin >> IDCliente;
     if (buscarCliente(IDCliente) < 0)
     {
         error("No existe el cliente");
         return false;
     }
-    std::cout << "Ingrese el pago del cliente: ";
-    std::cin >> pagoCliente;
+    cout << "Ingrese el pago del cliente: ";
+    cin >> pagoCliente;
     return true;
+}
+
+void venta::mostrarVenta()
+{
+    cout<< "ID venta: "<<ID;
+    cout << "fecha de venta: ";
+    mostrarFecha();
+    cout<<endl;
+    cout << "ID cliente: " <<IDCliente;
+    cout << "ID reparto: "<<IDReparto;
 }
 
 bool venta::guardarVenta()

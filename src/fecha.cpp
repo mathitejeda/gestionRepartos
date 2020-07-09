@@ -1,8 +1,8 @@
-#include "fecha.h"
-#include "Funciones.h"
 #include <iostream>
 #include <ctime>
 #include <string>
+#include "fecha.h"
+#include "Funciones.h"
 
 using namespace std;
 
@@ -31,7 +31,7 @@ void fecha::mostrarFecha()
     cout << dia << "/" << mes << "/" << anio;
 }
 
-string fecha::mostrarDiaTexto(int dia)
+std::string fecha::mostrarDiaTexto(int dia)
 {
     string sDia;
     switch (dia)
