@@ -3,10 +3,15 @@
 class venta
 {
 private:
-	int ID;
-	
+	int ID, IDCliente, IDReparto ;
+	fecha fechaVenta;
+	float pagoCliente;
 public:
-	void nuevaVenta();
+	void MostrarVenta();
+	bool cargarVenta(int IDReparto);
+	bool guardarVenta();
+	bool leerVenta(int pos);
 
 };
 
+bool nuevaVenta(int IDReparto);

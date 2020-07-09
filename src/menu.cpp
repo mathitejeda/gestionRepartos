@@ -253,6 +253,10 @@ void submenuProductos()
 	}
 }
 
+void submenuVentas(){
+	
+}
+
 void informes()
 {
 

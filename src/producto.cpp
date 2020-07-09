@@ -3,11 +3,12 @@
 #include "rlutil.h"
 #include <iostream>
 
-const char *PATH_PRODUCTO = "../datos/producto.dat";
+
 
 using namespace std;
 bool producto::nuevoProducto()
 {
+	ID = contarProductos();
 	cout << "Ingrese el nombre del producto: ";
 	cin.getline(nombreProducto, 50);
 	cout << "Ingrese el precio: ";
@@ -133,4 +134,13 @@ void listarProductos(){
 		cout<< "................................."<<endl;
 		i++;
 	}
+}
+
+int producto::contarProductos(){
+	int i=0;
+	producto count;
+	while (count.leerProducto(i)){
+		i++;
+	}
+	return i;
 }
