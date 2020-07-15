@@ -7,5 +7,8 @@ private:
     float precioUnitario;
 public:
     bool crearDetalle(int IDVenta);
+    bool guardarDetalle();
+    bool leerDetalle();
 };
 
+bool nuevoDetalle (int idVenta);

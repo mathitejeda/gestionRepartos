@@ -42,9 +42,9 @@ void menuPrincipal()
 			cls();
 			submenuProductos();
 			break;
-		case 100:
+		case 4:
 			cls();
-			nuevaVenta(1);
+			submenuVentas();
 			break;
 		case 0:
 			cls();
@@ -259,12 +259,58 @@ void submenuProductos()
 }
 
 void submenuVentas(){
-	
+	int opcion,id,idDia;
+	while (true)
+	{
+		cls();
+		cout << "VENTAS" << endl;
+		cout << "..........................." << endl;
+		cout << "1)CARGAR UNA VENTA" << endl;
+		cout << "2)CARGA MASIVA" << endl;
+		cout << "..........................." << endl;
+		cout << "0) VOLVER AL MENÚ PRINCIPAL" << endl;
+		cout << "" << endl;
+		cin >> opcion;
+		cin.ignore();
+		switch (opcion)
+		{
+		case 1:
+			cls();
+			cout<< "Ingrese el id del cliente: ";
+			cin>>id;
+			if(!nuevaVenta(0,id,0)){
+				error("Hubo un error al cargar la venta");
+			}
+			else exito("Venta cargada");
+			anykey();
+			break;
+		case 2:
+			cls();
+			cout<< "Ingrese el id del reparto: ";
+			cin>>id;
+			cout<< "Ingrese el dia de reparto: ";
+			cin >> idDia;
+			if(!cargaVentas(id,idDia)){
+				error ("Hubo un error al cargar las ventas");
+			}
+			else exito("Ventas cargadas con exito");
+			anykey();
+			break;
+
+		case 0:
+			cls();
+			cout << "volviendo al menu principal";
+			msleep(1000);
+			return;
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void informes()
 {
-
 	int opcion;
 	while (true)
 	{
