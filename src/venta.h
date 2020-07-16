@@ -8,11 +8,12 @@ private:
 
 public:
 	void mostrarVenta();
-	bool cargarVenta(int IDReparto,int IDCliente, int DiaReparto);
+	bool cargarVenta(int IDCliente);
 	bool guardarVenta();
 	bool leerVenta(int pos);
+	int contarVentas();
 };
 
-bool nuevaVenta(int IDReparto,int IDCliente, int DiaReparto);
+bool nuevaVenta(int IDCliente);
 
 bool cargaVentas (int IDReparto, int IDDiaReparto);

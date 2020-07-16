@@ -4,7 +4,6 @@ class reparto
 {
 private:
     int numeroReparto;
-    int diaReparto;
     int IDRepartidor;
 public:
     void mostrarReparto ();
@@ -14,10 +13,8 @@ public:
     bool guardarModificacion (int pos);
     //getters
     int getNroReparto () {return numeroReparto;}
-    int getFrecuencia () {return diaReparto;}
     int getRepartidor () {return IDRepartidor;}
     //setters
-    void serDiaReparto (int sDia) {diaReparto = sDia;}
     void setNroReparto (int sNro) {numeroReparto = sNro;}
     void setRepartidor (int sRepartidor) { IDRepartidor = sRepartidor; }
 };

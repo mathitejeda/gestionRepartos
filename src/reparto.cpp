@@ -13,8 +13,6 @@ bool reparto::cargarReparto()
     bool exito;
     cout << "Ingrese el numero de reparto: ";
     cin >> numeroReparto;
-    cout << "Ingrese el dia del reparto: ";
-    cin >> diaReparto;
     cout << "Ingrese el id del repartidor: ";
     cin >> IDRepartidor;
     cin.ignore();
@@ -26,7 +24,6 @@ bool reparto::cargarReparto()
 void reparto::mostrarReparto()
 {
     cout << "Numero de reparto: " << numeroReparto << endl;
-    cout << "Dia de reparto: " << diaReparto;
     cout << "Repartidor: " << IDRepartidor;
 }
 
@@ -80,6 +77,7 @@ bool reparto::leerReparto(int pos)
     fclose(p);
     return exito;
 }
+
 
 bool altaReparto()
 {

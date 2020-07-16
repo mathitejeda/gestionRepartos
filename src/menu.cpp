@@ -253,6 +253,9 @@ void submenuProductos()
 			return;
 			break;
 		default:
+			cls();
+			error("Opcion invalida");
+			anykey();
 			break;
 		}
 	}
@@ -278,7 +281,7 @@ void submenuVentas(){
 			cls();
 			cout<< "Ingrese el id del cliente: ";
 			cin>>id;
-			if(!nuevaVenta(0,id,0)){
+			if(!nuevaVenta(id)){
 				error("Hubo un error al cargar la venta");
 			}
 			else exito("Venta cargada");
@@ -304,6 +307,9 @@ void submenuVentas(){
 			return;
 			break;
 		default:
+			cls();
+			error("Opcion invalida");
+			anykey();
 			break;
 		}
 	}
@@ -330,7 +336,16 @@ void informes()
 		{
 		case 1:
 			break;
+		case 0:
+			cls();
+			cout << "volviendo al menu principal";
+			msleep(1000);
+			return;
+			break;
 		default:
+			cls();
+			error("Opcion invalida");
+			anykey();
 			break;
 		}
 	}

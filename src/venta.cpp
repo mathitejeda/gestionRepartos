@@ -10,26 +10,25 @@ using namespace std;
 
 const char *VENTAS_PATH = "../datos/ventas.dat";
 
-bool venta::cargarVenta(int IDReparto,int IDCliente, int DiaReparto)
+bool venta::cargarVenta(int IDCliente)
 {
-    fecha();
-    cliente reg;
-    if (buscarReparto(IDReparto) < 0)
-    {
-        error("No existe el reparto");
-        return false;
-    }
-    
-    if (buscarCliente(IDCliente) < 0)
+    int cPos = buscarCliente(IDCliente);
+    ID = contarVentas()+1;
+    if (cPos < 0)
     {
         error("No existe el cliente");
         return false;
     }
-    int cPos = buscarCliente(IDCliente);
+    fecha();
+    cliente reg;
     reg.leerCliente(cPos);
+    IDReparto = reg.getNroReparto();
+    IDDiaReparto = reg.getDiaReparto();
     reg.mostrarCliente();
-    if (!nuevoDetalle(ID)) {
-        error ("No se pudo crear el detalle");
+    cout<< endl << "............................." <<endl;
+    if (!nuevoDetalle(ID))
+    {
+        error("No se pudo crear el detalle");
         return false;
     }
     cout << "Su pago: ";
@@ -73,20 +72,24 @@ bool venta::leerVenta(int pos)
     return exito;
 }
 
-bool nuevaVenta(int IDReparto,int IDCliente, int DiaReparto)
+int venta::contarVentas()
+{
+    FILE *p;
+    int cant, bytes;
+    p = fopen(VENTAS_PATH, "rb");
+    if (p == NULL)
+        return 0;
+    fseek(p, 0, SEEK_END);
+    bytes = ftell(p);
+    cant = bytes / sizeof(venta);
+    fclose(p);
+    return cant;
+}
+
+bool nuevaVenta(int IDCliente)
 {
     venta reg;
-    cliente aux;
-    int cPos = buscarCliente (IDCliente);
-    if (DiaReparto==0){
-        aux.leerCliente(cPos);
-        DiaReparto=aux.getDiaReparto();
-    }
-    if(IDReparto == 0){
-        aux.leerCliente(cPos);
-        IDReparto = aux.getNroReparto();
-    }
-    if (reg.cargarVenta(IDReparto,IDCliente,DiaReparto))
+    if (reg.cargarVenta(IDCliente))
     {
         if (reg.guardarVenta())
         {
@@ -107,8 +110,9 @@ bool cargaVentas(int IDReparto, int IDDiaReparto)
     {
         if (lCliente.getDiaReparto() == IDDiaReparto && lCliente.getNroReparto() == IDReparto)
         {
-            if(!nuevaVenta(IDReparto,lCliente.getID(),IDDiaReparto)){
-                error ("No se pudo cargar la venta");
+            if (!nuevaVenta(lCliente.getID()))
+            {
+                error("No se pudo cargar la venta");
                 return false;
             }
         }
