@@ -76,17 +76,15 @@ bool venta::leerVenta(int pos)
 bool nuevaVenta(int IDReparto,int IDCliente, int DiaReparto)
 {
     venta reg;
+    cliente aux;
+    int cPos = buscarCliente (IDCliente);
     if (DiaReparto==0){
-        cliente aux;
-        int cPos = buscarCliente(IDCliente);
         aux.leerCliente(cPos);
         DiaReparto=aux.getDiaReparto();
     }
     if(IDReparto == 0){
-        reparto raux;
-        int rPos=buscarReparto(IDReparto);
-        raux.leerReparto(rPos);
-        IDReparto = raux.getNroReparto();
+        aux.leerCliente(cPos);
+        IDReparto = aux.getNroReparto();
     }
     if (reg.cargarVenta(IDReparto,IDCliente,DiaReparto))
     {

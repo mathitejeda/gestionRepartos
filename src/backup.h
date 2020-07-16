@@ -7,6 +7,7 @@ private:
 public:
     backup();
     ~backup();
+    bool crearBackup ();
 };
 
 
