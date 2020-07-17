@@ -12,8 +12,11 @@ public:
 	bool guardarVenta();
 	bool leerVenta(int pos);
 	int contarVentas();
+	//getters
+	float getPago() { return pagoCliente; }
+	int getID;
 };
 
 bool nuevaVenta(int IDCliente);
 
-bool cargaVentas (int IDReparto, int IDDiaReparto);
+bool cargaVentas(int IDReparto, int IDDiaReparto);

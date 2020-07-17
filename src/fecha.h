@@ -15,7 +15,7 @@ public:
 	// funciones
 	void mostrarFecha();
 	void mostrarFechaTexto();
-	std::string mostrarDiaTexto(int dia);
+	const char *mostrarDiaTexto(int dia);
 
 private:
 	int dia;
@@ -23,4 +23,3 @@ private:
 	int anio;
 	bool biciesto;
 };
-

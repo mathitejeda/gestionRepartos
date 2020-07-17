@@ -6,6 +6,7 @@
 #include "reparto.h"
 #include "producto.h"
 #include "venta.h"
+#include "informes.h"
 using namespace rlutil;
 using namespace std;
 
@@ -46,6 +47,9 @@ void menuPrincipal()
 			cls();
 			submenuVentas();
 			break;
+		case 5:
+			cls();
+			submenuInformes();
 		case 0:
 			cls();
 			cout << "Programa finalizado.";
@@ -236,15 +240,19 @@ void submenuProductos()
 			cout << "Ingrese el id del producto a modificar: ";
 			cin >> id;
 			cin.ignore();
-			if(modificarProducto(id)) exito("Producto modificado");
-			else error("No se pudo modificar el producto");
+			if (modificarProducto(id))
+				exito("Producto modificado");
+			else
+				error("No se pudo modificar el producto");
 			anykey();
 			break;
 		case 3:
 			rlutil::cls();
-			if(altaProducto()) exito ("Producto cargado correctamente");
-			else error("No se pudo modificar el producto");
-			rlutil::anykey(); 
+			if (altaProducto())
+				exito("Producto cargado correctamente");
+			else
+				error("No se pudo modificar el producto");
+			rlutil::anykey();
 			break;
 		case 0:
 			cls();
@@ -261,8 +269,9 @@ void submenuProductos()
 	}
 }
 
-void submenuVentas(){
-	int opcion,id,idDia;
+void submenuVentas()
+{
+	int opcion, id, idDia;
 	while (true)
 	{
 		cls();
@@ -279,24 +288,28 @@ void submenuVentas(){
 		{
 		case 1:
 			cls();
-			cout<< "Ingrese el id del cliente: ";
-			cin>>id;
-			if(!nuevaVenta(id)){
+			cout << "Ingrese el id del cliente: ";
+			cin >> id;
+			if (!nuevaVenta(id))
+			{
 				error("Hubo un error al cargar la venta");
 			}
-			else exito("Venta cargada");
+			else
+				exito("Venta cargada");
 			anykey();
 			break;
 		case 2:
 			cls();
-			cout<< "Ingrese el id del reparto: ";
-			cin>>id;
-			cout<< "Ingrese el dia de reparto: ";
+			cout << "Ingrese el id del reparto: ";
+			cin >> id;
+			cout << "Ingrese el dia de reparto: ";
 			cin >> idDia;
-			if(!cargaVentas(id,idDia)){
-				error ("Hubo un error al cargar las ventas");
+			if (!cargaVentas(id, idDia))
+			{
+				error("Hubo un error al cargar las ventas");
 			}
-			else exito("Ventas cargadas con exito");
+			else
+				exito("Ventas cargadas con exito");
 			anykey();
 			break;
 
@@ -315,9 +328,9 @@ void submenuVentas(){
 	}
 }
 
-void informes()
+void submenuInformes()
 {
-	int opcion;
+	int opcion, anio;
 	while (true)
 	{
 		cls();
@@ -335,6 +348,11 @@ void informes()
 		switch (opcion)
 		{
 		case 1:
+			cls();
+			cout << "Ingrese el año: ";
+			cin >> anio;
+			cout << "El total recaudado en el año " << anio << " es: $" << recaudacionAnual(anio);
+			anykey();
 			break;
 		case 0:
 			cls();

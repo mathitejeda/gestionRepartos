@@ -8,7 +8,7 @@ using namespace std;
 
 fecha::fecha(int d, int m, int a)
 {
-    if (d != 0 || m != 0 || a!= 0)
+    if (d != 0 || m != 0 || a != 0)
     {
         dia = d;
         mes = m;
@@ -31,9 +31,9 @@ void fecha::mostrarFecha()
     cout << dia << "/" << mes << "/" << anio;
 }
 
-std::string fecha::mostrarDiaTexto(int dia)
+const char *fecha::mostrarDiaTexto(int dia)
 {
-    string sDia;
+    const char *sDia;
     switch (dia)
     {
     case 1:

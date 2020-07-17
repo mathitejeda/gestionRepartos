@@ -16,7 +16,7 @@ bool detalleVenta::crearDetalle(int IDVenta)
     while (carga)
     {
         int actual = IDProducto;
-        while (actual = IDProducto)
+        while (actual == IDProducto)
         {
             cout << "cantidad: ";
             cin >> cantidad;
