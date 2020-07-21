@@ -50,6 +50,7 @@ void menuPrincipal()
 		case 5:
 			cls();
 			submenuInformes();
+			break;
 		case 0:
 			cls();
 			cout << "Programa finalizado.";
@@ -330,7 +331,7 @@ void submenuVentas()
 
 void submenuInformes()
 {
-	int opcion, anio;
+	int opcion, anio, id;
 	while (true)
 	{
 		cls();
@@ -351,7 +352,22 @@ void submenuInformes()
 			cls();
 			cout << "Ingrese el año: ";
 			cin >> anio;
-			cout << "El total recaudado en el año " << anio << " es: $" << recaudacionAnual(anio);
+			recaudacionAnual(anio, 0);
+			anykey();
+			break;
+		case 2:
+			cls();
+			cout << "Ingrese el reparto: ";
+			cin >> id;
+			cout << "Ingrese el año: ";
+			cin >> anio;
+			recaudacionAnual(anio, id);
+			anykey();
+		case 3:
+			cls();
+			cout << "Ingrese el id del cliente: ";
+			cin >> id;
+			comprasPorCliente(id);
 			anykey();
 			break;
 		case 0:

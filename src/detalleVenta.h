@@ -9,7 +9,11 @@ private:
 public:
     bool crearDetalle(int IDVenta);
     bool guardarDetalle();
-    bool leerDetalle();
+    bool leerDetalle(int id);
+
+    //Getters
+    int getIDVenta(){return IDVenta;}
 };
 
 bool nuevoDetalle(int idVenta);
+int buscarDetalle(int id);

@@ -13,6 +13,10 @@ bool reparto::cargarReparto()
     bool exito;
     cout << "Ingrese el numero de reparto: ";
     cin >> numeroReparto;
+    if(numeroReparto <= 0){
+        error("solo se permiten numeros mayores a cero.");
+        return false;
+    }
     cout << "Ingrese el id del repartidor: ";
     cin >> IDRepartidor;
     cin.ignore();

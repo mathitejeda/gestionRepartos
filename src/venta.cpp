@@ -45,6 +45,7 @@ void venta::mostrarVenta()
     cout << endl;
     cout << "ID cliente: " << IDCliente;
     cout << "ID reparto: " << IDReparto;
+    cout << "Pago del cliente: $"<<pagoCliente;    
 }
 
 bool venta::guardarVenta()

@@ -35,7 +35,16 @@ bool detalleVenta::guardarDetalle (){
     fclose (p);
     return exito;
 }
-
+bool detalleVenta:: leerDetalle(int pos){
+    FILE* p;
+    bool exito;
+    p=fopen(PATH_DETALLE,"rb");
+    if (p== NULL) {return false;}
+    fseek(p,pos*sizeof(detalleVenta),SEEK_SET);
+    exito = fread(this,sizeof(detalleVenta),1,p);
+    fclose (p);
+    return exito;
+}
 bool nuevoDetalle (int idVenta){
     detalleVenta reg;
 
@@ -46,4 +55,17 @@ bool nuevoDetalle (int idVenta){
         return false;
     }
     return false;
+}
+
+int buscarDetalle(int id){
+    detalleVenta buscar;
+    int i=0;
+    while (buscar.leerDetalle(i));
+    {
+      if(buscar.getIDVenta() == id){
+          return i;
+      }
+      i++;
+    }
+    return -1;
 }

@@ -14,7 +14,8 @@ public:
 	int contarVentas();
 	//getters
 	float getPago() { return pagoCliente; }
-	int getID;
+	int getCliente(){return IDCliente;}
+	int getReparto() {return IDReparto;}
 };
 
 bool nuevaVenta(int IDCliente);
