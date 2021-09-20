@@ -1,4 +1,5 @@
-#pragma once
+#        virtual ~persona();
+pragma once
 #include <iostream>
 #include <cstring>
 class persona
